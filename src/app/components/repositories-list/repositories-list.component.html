@@ -1,0 +1,20 @@
+<div class="container">
+  <div
+    class="row align-items-center justify-content-md-between justify-content-sm-center justify-content-center owner-info-wrapper">
+    <div><img class="col-md-4 col-12" src="{{repositories ? repositories[0]?.owner.avatar_url : ''}}" alt=""></div>
+
+    <h4 class="col-md-6">{{repositories ? repositories[0].owner.login : ''}}</h4>
+    <div class="col-md-2 col-12">
+      <button class="btn btn-success"><a href="{{repositories ? repositories[0].owner.html_url : 0}}" target="_blank">GItHub
+        Page</a>
+      </button>
+    </div>
+  </div>
+  <h5>Repositories</h5>
+  <div class="row justify-content-md-center">
+    <p class="repo-item col-sm-5" *ngFor="let repository of repositories; let index = index"
+       (click)="selectRepository(repository)">
+      <span>№ {{index +1}}</span> - <span>{{repository.name}}</span>
+    </p>
+  </div>
+</div>

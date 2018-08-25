@@ -1,0 +1,104 @@
+.contributors-list {
+  border: 2px solid lightgrey;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  span {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    background-color: #f5f6f7;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 0px;
+      height: 100%;
+      background: rgba(176, 176, 176, 0.3);
+      border-radius: 5px;
+
+      transition: all 2s ease;
+    }
+    &:hover:before {
+      width: 100%;
+    }
+    img {
+      border-radius: 50%;
+    }
+  }
+}
+
+/deep/ .pagination {
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  .page-link {
+    color: black;
+  }
+  .page-item.active .page-link {
+    background-color: rgba(176, 176, 176, 1);
+    border-color: rgba(176, 176, 176, 1);
+  }
+}
+
+.repo-info-title {
+  color: #616770;
+  margin-top: 30px;
+  h3 {
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  div {
+    font-size: 18px;
+    font-style: italic;
+  }
+  div:nth-child(3) {
+    text-align: center;
+  }
+  div:last-child {
+    text-align: right;
+  }
+}
+
+.btn-success {
+  background-color: #61ec81;
+  border-color: #61ec81;
+  &:hover {
+    background-color: darken(#61ec81, 20%);
+    border-color: darken(#61ec81, 20%)
+  }
+  a {
+    color: #ffffff;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.contributor-info-wrapper {
+  margin: 20px auto;
+  border: 1px solid lightgrey;
+  background-color: whitesmoke;
+  border-radius: 5px;
+  padding: 10px;
+  img {
+    max-width: 150px;
+    height: auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .repo-info-title
+  & > div {
+    text-align: center;
+  }
+  button {
+    margin: auto;
+    display: block;
+  }
+}
